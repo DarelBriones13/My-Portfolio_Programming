@@ -50,7 +50,7 @@ section{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 3rem 9%;
+    padding: 2.5rem 9%;
     background: rgba(0, 0, 0, .9);
     filter: drop-shadow(10px);
     display: flex;
@@ -92,39 +92,49 @@ section{
     display: none; 
 }
 
+
 @media (max-width: 996px) {
-    .menu-icon {
+    .logo{
+        margin-left: 1rem;
+    }
+    #menu-icon {
         display: block;
-        font-size: 2.5rem;
+        font-size: 3.5rem;
         cursor: pointer;
-    }
-
-    .navbar {
+        margin-right: 0.3rem;
+        color: var(--text-color); 
+    } 
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        border-left: 3px solid var(--main-color);
+        border-bottom: 3px solid var(--main-color);
+        border-bottom-left-radius: 2rem;
+        padding: 1rem 3%;
+        background-color: rgba(0, 0, 0, .8);
+        border-top: 0.1rem solid rgba(0, 0, 0, .1);
         display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--second-bg-color);
-        z-index: 99;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        flex-direction: column; 
-        justify-content: center; 
-        align-items: center; 
     }
-
+    .navbar.active {
+        display: block;
+    }
     .navbar a {
         display: block;
         font-size: 2rem;
         margin: 2rem 0;
+        color: white; 
+        text-decoration: none; 
+        transition: color 0.3s ease; 
     }
 
-    .navbar a:hover {
+    .navbar a:hover,
+    .navbar a.active{
         padding: 1rem;
         border-radius: 0.5rem;
         border-bottom: 0.5rem solid var(--main-color);
+        color: var(--main-color); 
     }
 
     .home {
@@ -137,17 +147,10 @@ section{
     .home .home-content h1 {
         font-size: 4.5rem; 
     }
-    .home-img img {
-        width: 70vw; 
-        margin-top: 4rem;
-    }
-
     .social-icon a {
         margin: 2rem 1.5rem; 
     }
 }
-
-
 
 /* HOME */
 section {
@@ -185,11 +188,12 @@ span {
 
 .home-img img {
     position: relative;
-    width: 30vw;
-    height: 30vw;
+    width: 550px;
+    height: 550px;
     border-radius: 50%;
     box-shadow: 0 0 25px var(--main-color);
     cursor: pointer;
+    margin-top: 1.5rem;
 }
 
 .home-img img:hover {
@@ -247,12 +251,14 @@ span {
     box-shadow: 0 0 25px var(--main-color);
 }
 
+
 .typing-text span{
     font-size: 4rem;
     margin-bottom: 1rem;
     font-weight: 700;
     position: relative; 
     overflow: hidden; 
+
 }
 
 .typing-text span::before {
@@ -271,9 +277,18 @@ span {
     90% {
         left: calc(100% - 2px);
     }
-    100% {
+    100%{
         left: 100%;
     }
+}
+
+@media (max-width: 996px){
+    .home-img img{
+        width: 70%;
+        height: 70%;
+        margin-top: 5.5rem;
+    }
+
 }
 
 /* ACTIVITIES */
@@ -516,7 +531,7 @@ span {
 }
 
 .education .container::after {
-    content: '\f19d'; /* Unicode value for the education icon from Font Awesome */
+    content: '\f19d'; 
     font-family: 'Font Awesome 5 Free';
     position: absolute;
     width: 25px;
@@ -526,8 +541,8 @@ span {
     background-color: rgba(252, 252, 252);
     border: 4px solid var(--main-color);
     top: 15px;
-    z-index: 100;
-    font-weight: 900; /* Adjust the weight according to your icon font */
+    z-index: 50;
+    font-weight: 900; 
     font-size: 1.89rem;
     text-align: center;
     color: var(--text-color);
@@ -585,7 +600,7 @@ span {
 
 .education .content .decs {
     margin-left: 1.5rem;
-    padding-bottom: 2rem; /* Adjusted padding for paragraphs */
+    padding-bottom: 2rem; 
 }
 
 .education .content .tag h2 {

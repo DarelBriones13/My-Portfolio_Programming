@@ -101,8 +101,12 @@ html::-webkit-scrollbar-track {
 @media (max-width: 996px) {
     .menu-icon {
         display: block;
-        font-size: 2.5rem;
+        font-size: 3rem;
         cursor: pointer;
+        position: fixed; /* Make the menu icon fixed */
+        top: 1.5rem; /* Adjust the top position as needed */
+        right: 2.5rem; /* Adjust the right position as needed */
+        z-index: 101; /* Ensure the menu icon stays above other elements */
     }
 
     .navbar {
